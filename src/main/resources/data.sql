@@ -1,2 +1,13 @@
-INSERT INTO tb_perguntas (id, pergunta) values (1, 'TESTE PRIMEIRA PERGUNTA');
-INSERT INTO tb_perguntas (id, pergunta) VALUES (2, 'OUTRA PERGUNTA');
+INSERT INTO tb_perguntas (id, pergunta) values (1, 'Qual é o faturamento anual aproximado da empresa? (em R$)');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (2, 'Você possui funcionários registrados?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (3, 'Qual é a principal atividade da empresa?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (4, 'Você possui muitos gastos dedutíveis relevantes?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (5, 'A folha de pagamento representa mais de 20% do faturamento?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (6, 'Sua atividade é permitida no MEI?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (7, 'Você vende para fora do estado?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (8, 'Você presta serviços para outros estados?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (9, 'Sua indústria tem benefícios fiscais de ICMS?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (10, 'O faturamento é equilibrado entre comércio e serviços?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (11, 'Sua empresa realiza exportações ou importações?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (12, 'Qual é o tipo jurídico da empresa?');
+INSERT INTO tb_perguntas (id, pergunta) VALUES (13, 'Sua empresa possui despesas dedutíveis além da folha de pagamento?');

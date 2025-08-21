@@ -1,5 +1,6 @@
 package com.mofc.secontabil.services;
 
+import com.mofc.secontabil.dtos.RespostaDTO;
 import com.mofc.secontabil.models.Perguntas;
 import com.mofc.secontabil.repositories.PerguntasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,34 @@ public class PerguntasService {
     public List<Perguntas> getAllPerguntas(){
         return perguntasRepository.findAll();
     }
+
+//    public Perguntas obterIdPerguntaPelaResposta(RespostaDTO dto){
+//
+//        Long idPergunta = dto.id();
+//        Object resposta = dto.resposta();
+//
+//        if (resposta instanceof String) {
+//            String valor = (String) resposta;
+//        } else if (resposta instanceof Boolean) {
+//            Boolean valor = (Boolean) resposta;
+//        } else if (resposta instanceof Number) {
+//            Double valor = ((Number) resposta).doubleValue();
+//        } else {
+//            String valor = "Inválido";
+//        }
+//
+//        if(idPergunta.equals(1)){
+//            if(valor=>81000){
+//                Optional<Perguntas> perguntas = this.perguntasRepository.findById(Long.valueOf(3));
+//                return perguntas.orElseThrow(() -> new BeanDefinitionValidationException(
+//                        "Pergunta não encontrada"
+//                ));
+//            } else if() {
+//
+//            }
+//        }
+//
+  //   }
 
 
 
