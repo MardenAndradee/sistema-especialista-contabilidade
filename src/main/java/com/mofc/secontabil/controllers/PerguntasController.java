@@ -27,25 +27,9 @@ public class PerguntasController {
     }
 
     @PostMapping("/resposta")
-    public String obterResposta(@RequestBody RespostaDTO dto){
-        Long id = dto.id();
-        Object resposta = dto.resposta();
-
+    public Perguntas obterResposta(@RequestBody RespostaDTO dto){
         //fazer lógica e retornar id da proxima pergunta
-        //perguntasService.obterIdPerguntaPelaResposta(dto);
-
-        if (resposta instanceof String) {
-            String valor = (String) resposta;
-            return "Pergunta " + id + " recebida com resposta TEXTUAL: " + valor;
-        } else if (resposta instanceof Boolean) {
-            Boolean valor = (Boolean) resposta;
-            return "Pergunta " + id + " recebida com resposta BOOLEANA: " + valor;
-        } else if (resposta instanceof Number) {
-            Double valor = ((Number) resposta).doubleValue();
-            return "Pergunta " + id + " recebida com resposta NUMÉRICA: " + valor;
-        } else {
-            return "Tipo de resposta não reconhecido para a pergunta " + id;
-        }
+        return perguntasService.obterIdProximaPergunta(dto);
     }
 
 
