@@ -5,6 +5,8 @@ import com.mofc.secontabil.repositories.RespostasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RespostasService {
 
@@ -17,6 +19,10 @@ public class RespostasService {
         }else{
             throw new Error("Resposta não encontrada");
         }
+    }
+
+    public List<Respostas> getAllRespostas(){
+        return respostasRepository.findAll();
     }
 
 }
