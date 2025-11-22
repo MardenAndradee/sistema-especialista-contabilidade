@@ -85,7 +85,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ pergunta, onSubmit, loading
               value={valor}
               onChange={(e) => setValor(e.target.value)}
               required
-              className="px-4 py-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-green-500 transition-colors"
+              className="px-4 py-3 border-2 border-gray-200 rounded-lg text-black text-base focus:outline-none focus:border-green-500 transition-colors"
             >
               <option value="">-- Selecione --</option>
               {OPCOES_ATIVIDADE.map((opcao: string) => (
