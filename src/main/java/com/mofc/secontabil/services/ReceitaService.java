@@ -20,5 +20,4 @@ public class ReceitaService {
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         return response.getBody();
     }
-
 }

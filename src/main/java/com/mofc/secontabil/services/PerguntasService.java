@@ -33,225 +33,95 @@ public class PerguntasService {
     public Perguntas obterIdProximaPergunta(RespostaDTO dto){
 
         Long idPergunta = dto.getIdPergunta();
-        Perguntas pergunta = perguntasRepository.findPerguntasById(1L);
+        Perguntas proximaPergunta = perguntasRepository.findPerguntasById(1L);
 
-        if(idPergunta==1){
-            if(dto.getRespostaDouble()<=81000){
-                //retorna id2
-                pergunta = perguntasRepository.findPerguntasById(2L);
-                //"acao": "Possível enquadramento: MEI"
-                //armazena a resposta
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaDouble().toString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaDouble()>81000 && dto.getRespostaDouble() <=360000){
-                //retorna id3
-                pergunta = perguntasRepository.findPerguntasById(3L);
-                //"Possível enquadramento: Simples Nacional (Faixa 1)"
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaDouble().toString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaDouble()>360000 && dto.getRespostaDouble() <=480000){
-                //retorna id3
-                pergunta = perguntasRepository.findPerguntasById(3L);
-                //"Possível enquadramento: Simples Nacional (Faixa 2)"
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaDouble().toString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaDouble()>480000){
-                //retorna id4
-                pergunta = perguntasRepository.findPerguntasById(4L);
-                //"Possível enquadramento: Lucro Presumido ou Real"
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaDouble().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==2){
-            if(dto.getRespostaBoolean()){
-                //retorna id5
-                pergunta = perguntasRepository.findPerguntasById(5L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //retorna id6
-                pergunta = perguntasRepository.findPerguntasById(6L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==3){
-            if(dto.getRespostaString().equals("Comércio")){
-                //retorna id7
-                pergunta = perguntasRepository.findPerguntasById(7L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaString().equals("Serviços")){
-                //retorna id8
-                pergunta = perguntasRepository.findPerguntasById(8L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaString().equals("Industria")){
-                //retorna id9
-                pergunta = perguntasRepository.findPerguntasById(9L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaString().equals("Misto")){
-                //retorna id10
-                pergunta = perguntasRepository.findPerguntasById(10L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==4){
-            if(dto.getRespostaBoolean()){
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                //"acao": "Recomendação: Avaliar Lucro Real"
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                //"acao": "Recomendação: Avaliar Lucro Presumido"
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==5){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Possibilidade de redução tributária via Simples Nacional (Anexo IV)"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Manter enquadramento atual"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==6){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Recomendação: Permanecer no MEI"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Migrar para Simples Nacional"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==7){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Recomendação: Permanecer no MEI"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Migrar para Simples Nacional"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==8){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Necessário Inscrição Estadual e atenção ao ICMS interestadual"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Seguir obrigações fiscais estaduais normais"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==9){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Manter benefícios e avaliar enquadramento no Simples ou Lucro Presumido"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Seguir regime normal"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==10){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Avaliar tributação separada por atividade"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Seguir tributação principal"
-                //retorna id11
-                pergunta = perguntasRepository.findPerguntasById(11L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==11){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Verificar obrigações de comércio exterior e ICMS"
-                //retorna id12
-                pergunta = perguntasRepository.findPerguntasById(12L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Seguir tributação normal"
-                //retorna id12
-                pergunta = perguntasRepository.findPerguntasById(12L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==12){
-            if(dto.getRespostaString().equals("MEI")){
-                //retorna id13
-                pergunta = perguntasRepository.findPerguntasById(13L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaString().equals("EIRELI")){
-                //retorna id13
-                pergunta = perguntasRepository.findPerguntasById(13L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaString().equals("LTDA")){
-                //retorna id13
-                pergunta = perguntasRepository.findPerguntasById(13L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaString().equals("S/A")){
-                //retorna id13
-                pergunta = perguntasRepository.findPerguntasById(13L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }else if(dto.getRespostaString().equals("Outros")){
-                //retorna id13
-                pergunta = perguntasRepository.findPerguntasById(13L);
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaString());
-                respostasService.create(resposta);
-            }
-        }else if(idPergunta==13){
-            if(dto.getRespostaBoolean()){
-                //"acao": "Possível vantagem em avaliar Lucro Real"
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
-            }else{
-                //"acao": "Manter enquadramento atual"
-                Respostas resposta = new Respostas(pergunta, dto.getRespostaBoolean().toString());
-                respostasService.create(resposta);
+        //---------------------------------------------------------------
+        // REGRA 1 — Pergunta 1
+        //---------------------------------------------------------------
+        if(idPergunta == 1){
+            Respostas resposta = new Respostas(findById(1L), dto.getRespostaDouble().toString());
+            respostasService.create(resposta);
+
+            if(dto.getRespostaDouble() <= 81000){
+                proximaPergunta = findById(2L);
+            } else if(dto.getRespostaDouble() <= 360000){
+                proximaPergunta = findById(3L);
+            } else if(dto.getRespostaDouble() <= 480000){
+                proximaPergunta = findById(3L);
+            } else {
+                proximaPergunta = findById(4L);
             }
         }
 
-        if (pergunta == null) {
-            throw new BeanDefinitionValidationException("Pergunta não encontrada");
+        //---------------------------------------------------------------
+        // REGRA 2 — Pergunta 2 (Boolean)
+        //---------------------------------------------------------------
+        else if(idPergunta == 2){
+            Respostas resposta = new Respostas(findById(2L), dto.getRespostaBoolean().toString());
+            respostasService.create(resposta);
+
+            proximaPergunta = dto.getRespostaBoolean() ? findById(5L) : findById(6L);
         }
 
-        return pergunta;
+        //---------------------------------------------------------------
+        // REGRA 3 — Pergunta 3 (String)
+        //---------------------------------------------------------------
+        else if(idPergunta == 3){
+            Respostas resposta = new Respostas(findById(3L), dto.getRespostaString());
+            respostasService.create(resposta);
 
-     }
+            switch (dto.getRespostaString()) {
+                case "Comércio":  proximaPergunta = findById(7L); break;
+                case "Serviços":  proximaPergunta = findById(8L); break;
+                case "Industria": proximaPergunta = findById(9L); break;
+                case "Misto":     proximaPergunta = findById(10L); break;
+            }
+        }
+
+        //---------------------------------------------------------------
+        // PERGUNTAS 4 a 10 (Boolean → sempre salva corretamente)
+        //---------------------------------------------------------------
+        else if(idPergunta >= 4 && idPergunta <= 10){
+            Respostas resposta = new Respostas(findById(idPergunta), dto.getRespostaBoolean().toString());
+            respostasService.create(resposta);
+
+            proximaPergunta = findById(11L);
+        }
+
+        //---------------------------------------------------------------
+        // PERGUNTA 11 (Boolean)
+        //---------------------------------------------------------------
+        else if(idPergunta == 11){
+            Respostas resposta = new Respostas(findById(11L), dto.getRespostaBoolean().toString());
+            respostasService.create(resposta);
+
+            proximaPergunta = findById(12L);
+        }
+
+        //---------------------------------------------------------------
+        // PERGUNTA 12 (String)
+        //---------------------------------------------------------------
+        else if(idPergunta == 12){
+            Respostas resposta = new Respostas(findById(12L), dto.getRespostaString());
+            respostasService.create(resposta);
+
+            proximaPergunta = findById(13L);
+        }
+
+        //---------------------------------------------------------------
+        // PERGUNTA 13 (Boolean)
+        //---------------------------------------------------------------
+        else if(idPergunta == 13){
+            Respostas resposta = new Respostas(findById(13L), dto.getRespostaBoolean().toString());
+            respostasService.create(resposta);
+
+            proximaPergunta = findById(13L);
+        }
+
+        if (proximaPergunta == null) {
+            throw new BeanDefinitionValidationException("Próxima pergunta não encontrada");
+        }
+
+        return proximaPergunta;
+    }
 }
