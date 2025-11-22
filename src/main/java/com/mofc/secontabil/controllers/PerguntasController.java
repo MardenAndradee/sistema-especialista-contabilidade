@@ -1,6 +1,6 @@
 package com.mofc.secontabil.controllers;
 
-import  com.mofc.secontabil.dtos.RespostaDTO;
+import com.mofc.secontabil.dtos.RespostaDTO;
 import com.mofc.secontabil.models.Perguntas;
 import com.mofc.secontabil.services.PerguntasService;
 import org.springframework.beans.factory.annotation.Autowired;

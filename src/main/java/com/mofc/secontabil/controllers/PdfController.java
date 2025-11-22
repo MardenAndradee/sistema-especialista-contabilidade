@@ -1,6 +1,5 @@
 package com.mofc.secontabil.controllers;
 
-import com.itextpdf.kernel.pdf.PdfDocument;
 import com.mofc.secontabil.services.PdfService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

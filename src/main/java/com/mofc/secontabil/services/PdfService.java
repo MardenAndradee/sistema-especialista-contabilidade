@@ -40,7 +40,7 @@ public class PdfService {
             document.add(new Paragraph("\n"));
 
             // Nome do usuário
-            document.add(new Paragraph("Nome do usuário: " + nome)
+            document.add(new Paragraph("Nome da empresa: " + nome)
                     .setFontSize(12)
                     .setBold());
             document.add(new Paragraph("\n"));

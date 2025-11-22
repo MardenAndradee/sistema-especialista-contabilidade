@@ -30,7 +30,7 @@ public class RespostaDTO{
         this.respostaBoolean = respostaBoolean;
     }
 
-    public Double getRespostaDouble()   {
+    public Double getRespostaDouble() {
         return respostaDouble;
     }
 

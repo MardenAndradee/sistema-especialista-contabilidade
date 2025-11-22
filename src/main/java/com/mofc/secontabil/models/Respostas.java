@@ -2,8 +2,6 @@ package com.mofc.secontabil.models;
 
 import jakarta.persistence.*;
 
-import java.util.Optional;
-
 @Entity
 @Table(name = "TB_RESPOSTAS")
 public class Respostas {
