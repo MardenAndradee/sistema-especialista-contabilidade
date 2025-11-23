@@ -81,6 +81,54 @@ O frontend será iniciado em `http://localhost:3000` 🎉
 
 ---
 
+##  🧠 Instalação do Ollama (para uso da IA local)
+
+Para gerar resumos e análises contábeis no sistema, utilizamos o Ollama, que permite rodar modelos de IA localmente, sem custos e sem necessidade de internet.
+
+A instalação é simples e compatível com Linux, macOS e Windows.
+
+##  📥 Instalação no Linux/macOS (via script .sh)
+
+Execute o comando abaixo no terminal:
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+
+Após a instalação, verifique se o Ollama está funcionando:
+
+ollama --version
+
+##  🧩 Baixar o modelo necessário
+
+Este projeto utiliza o modelo Llama 3, que é leve e funciona muito bem para resumos e processamento de texto.
+
+Para baixar:
+
+ollama pull llama3
+
+
+Depois teste:
+
+ollama run llama3
+
+
+Se aparecer um prompt aguardando interação → está funcionando ✔️
+
+##  🪟 Instalação no Windows
+
+No Windows, basta baixar o instalador oficial:
+
+🔗 https://ollama.com/download/windows
+
+Após a instalação, confirme que está funcionando:
+
+ollama --version
+
+
+E baixe o modelo:
+
+ollama pull llama3
+
 ## 🤝 Como Contribuir
 
 1. Crie uma branch para sua feature ou correção:  
