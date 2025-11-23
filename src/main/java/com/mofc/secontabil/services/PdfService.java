@@ -22,6 +22,9 @@ public class PdfService {
     @Autowired
     RespostasService respostasService;
 
+    @Autowired
+    OllamaService ollamaService;
+
     public byte[] gerarRelatorio(String nome) {
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
 
@@ -106,11 +109,26 @@ public class PdfService {
                 tabela.addCell(new Cell().add(new Paragraph(resposta)));
             }
 
+            StringBuilder prompt = new StringBuilder("Gere recomendações contábeis claras e diretas em um parágrafo com base nas seguintes respostas:\n\n");
+
+            for (Respostas r : listarRespostas) {
+                prompt.append("- ").append(r.getPergunta().getPergunta())
+                        .append(": ").append(r.getResposta()).append("\n");
+            }
+
+            String textoIA = ollamaService.gerarResumo(prompt.toString());
+
             // Adiciona tabela ao documento
             document.add(tabela);
 
+            document.add(new Paragraph("\n"));
+            document.add(new Paragraph("Recomendações Contábeis").setBold().setFontSize(14));
+            document.add(new Paragraph(textoIA));
+
             document.close();
             return baos.toByteArray();
+
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);

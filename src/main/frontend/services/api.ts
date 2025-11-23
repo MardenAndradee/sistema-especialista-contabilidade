@@ -9,7 +9,7 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
   withCredentials: false,
-  timeout: 10000 // 10 segundos de timeout
+  timeout: 1000000 // 10 segundos de timeout
 });
 
 // Interceptor para logs (ajuda no debug)
